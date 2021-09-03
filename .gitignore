@@ -9,3 +9,7 @@ bin/*
 .kitchen.local.yml
 
 logs/*
+
+results/*
+plans/results/*
+plans/reticulum/habitat/reticulum*

@@ -3,9 +3,10 @@ pkg_origin=raspberry-dream-labs
 pkg_version="1.0.1"
 pkg_maintainer="Raspberry Dream Labs (info@rasberrydreamlabs.com)"
 pkg_source="https://github.com/Raspberry-Dream-Land/reticulum"
-pkg_upstream_url="https://github.com/Raspberry-Dream-Land/reticulum"
+pkg_upstream_url="https://github.com/Raspberry-Dream-Land/reticulum/"
 pkg_license=('MPL-2.0')
 pkg_filename="reticulum-1.0.1.tar.bz2"
+pkg_branch="polycosm"
 
 pkg_deps=(
     core/coreutils/8.30/20190115012313
@@ -18,7 +19,7 @@ pkg_build_deps=(
     core/coreutils/8.30/20190115012313
     core/git/2.26.2/20200601121014
     raspberry-dream-labs/erlang/22.0
-    core/elixir/1.8.0
+    raspberry-dream-labs/elixir/1.8.0
 )
 
 pkg_exports=(
@@ -30,7 +31,7 @@ pkg_description="A moral imperative."
 do_download() {
   export GIT_SSL_NO_VERIFY=true
   rm -rf ./reticulum*
-  git clone $pkg_source
+  git clone --branch $pkg_branch $pkg_source
   mv ./reticulum ./reticulum-1.0.1
   tar -cjvf $HAB_CACHE_SRC_PATH/$pkg_filename ./reticulum-1.0.1 --exclude reticulum/.git --exclude reticulum/spec
 }
