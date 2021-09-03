@@ -1,6 +1,8 @@
+env
 export HAB_ORIGIN=raspberry-dream-labs
 export HAB_BLDR_URL=https://bldr.biome.sh
 
+env
 echo "changing directories"
 cd ./biome-habitats/plans
 
