@@ -1,9 +1,6 @@
 export HAB_ORIGIN=raspberry-dream-labs
 export HAB_BLDR_URL=https://bldr.biome.sh
 
-echo "Getting plans"
-git clone https://github.com/robert-rdl/biome-habitats.git
-
 echo "changing directories"
 cd ./biome-habitats/plans
 
