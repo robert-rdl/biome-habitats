@@ -1,10 +1,12 @@
-env
 export HAB_ORIGIN=raspberry-dream-labs
 export HAB_BLDR_URL=https://bldr.biome.sh
 
 env
 echo "changing directories"
 cd ./biome-habitats/plans
+
+echo "changing to root"
+sudo su root
 
 echo "packaging reticulum"
 bio pkg build ./reticulum
