@@ -6,7 +6,7 @@ echo "changing directories"
 cd ./biome-habitats/plans
 
 echo "changing to root"
-sudo su
+su root
 
 echo "packaging reticulum"
 bio pkg build ./reticulum
