@@ -287,7 +287,6 @@ done # Wait for bio
 
 systemctl enable bio
 
-/usr/bin/bio pkg install raspberry-dream-labs/reticulum --url https://bldr.biome.sh
 
 if [[ $ROLES == "app" || $ROLES == "app,stream" ]] ; then
   echo "Loading app services."
@@ -373,6 +372,7 @@ if [[ $ROLES == "app" || $ROLES == "app,stream" ]] ; then
 
   echo "Starting app services."
 
+/usr/bin/bio pkg install raspberry-dream-labs/reticulum --url https://bldr.biome.sh
   /usr/bin/bio svc load raspberry-dream-labs/reticulum --strategy at-once
   /usr/bin/bio svc start raspberry-dream-labs/reticulum
   echo "Waiting for Reticulum."
