@@ -287,7 +287,6 @@ done # Wait for bio
 
 systemctl enable bio
 
-/usr/bin/bio svc unload mozillareality/reticulum
 /usr/bin/bio pkg install raspberry-dream-labs/reticulum --url https://bldr.biome.sh
 
 if [[ $ROLES == "app" || $ROLES == "app,stream" ]] ; then
@@ -323,6 +322,9 @@ sleep 2
   rm -rf /storage/aws-backup-restore*
 
 ) 9>/storage/certbot-lock
+
+echo "Unloading mozillareality/reticulum"
+/usr/bin/bio svc unload mozillareality/reticulum
 
 /usr/bin/bio svc start mozillareality/pgbouncer
 echo "Waiting for pgBouncer."
